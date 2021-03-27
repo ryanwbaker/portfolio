@@ -118,7 +118,6 @@ const renderMainState = () => {
         contactContainer.style.display='none';
 
         postContainer.style.display='block';
-        postContainer.innerHTML=''
         $('#blog-content').load('posts/1.html')
         
     }
