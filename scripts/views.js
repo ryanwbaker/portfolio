@@ -119,8 +119,9 @@ const renderMainState = () => {
 
         postContainer.style.display='block';
         $('#blog-content').load(`posts/${state}.html`, (err)=>{
-            alert('Post not found! Redirecting to main portfolio.');
-            selectMainState('portfolio');
+            console.log(err)
+            // alert('Post not found! Redirecting to main portfolio.');
+            // selectMainState('portfolio');
         });
         
     }
