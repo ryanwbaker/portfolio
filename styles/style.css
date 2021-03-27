@@ -2,8 +2,8 @@ html {overflow-y: scroll;}
 .scrollToTopBtn {
     border-radius: 5%;
     position: fixed;
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 10px;
     z-index: 100;
     display: none;
     border: 1px solid black;
@@ -36,7 +36,7 @@ html {overflow-y: scroll;}
         flex-wrap: nowrap;
         width: 100%;
      }
-     .blog-control-container {
-         min-height: 94px;
+     .blog-control-container{
+         float: top;
      }
  }
