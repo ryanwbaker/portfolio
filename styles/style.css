@@ -28,3 +28,7 @@ html {overflow-y: scroll;}
      flex-direction: row;
      justify-content: center;
  }
+
+ @media and (max-width: 700px){
+     .media
+ }
