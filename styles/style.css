@@ -36,4 +36,7 @@ html {overflow-y: scroll;}
         flex-wrap: nowrap;
         width: 100%;
      }
+     .blog-control-container {
+         min-height: 94px;
+     }
  }
