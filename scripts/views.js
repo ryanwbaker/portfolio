@@ -107,7 +107,7 @@ const renderMainState = () => {
         aboutNavButton.classList.remove('w3-text-teal')
         contactNavButton.classList.add('w3-text-teal')
     }
-        
+
     //render post
     else{
         portfolioNavButton.classList.add("w3-text-teal");
@@ -119,7 +119,7 @@ const renderMainState = () => {
 
         postContainer.style.display='block';
         postContainer.innerHTML=''
-        $('#blog-content').load(`posts/${state}.html`).then(res => 0)
+        $('#blog-content').load(`posts/${state}.html`)
         
     }
     
