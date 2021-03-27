@@ -157,7 +157,7 @@ const nextPost = (curPost = getMainState()) =>{
         renderPost(ids(ind++));
     }
     else{
-        console.log('prevPost was not found')
+        console.log('nexPost was not found')
     }
 }
 
