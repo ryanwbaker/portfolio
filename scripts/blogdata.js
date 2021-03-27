@@ -231,7 +231,7 @@ const blogdata = [
         title:'Sample Post 3', 
         type:'Project',
         date:'September 30, 2021',
-        desc:'Cheap parts, but labour intensive.',
+        desc:'1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-1 3 5 7 9-',
         img:'img/3.jpg',
         link:'posts/1.html'
     },
@@ -246,10 +246,10 @@ const blogdata = [
     },
     {
         id:1, //store HTML file as 'id.html' in 'posts' folder
-        title:'How I fixed a $500 Hairdryer for $4.00', 
-        type:'Project', //'Project' or 'Reflection'
+        title:'ENEL 300: A Custom Car Horn', 
+        type:'Reflection', //'Project' or 'Reflection'
         date:'September 30, 2021',
-        desc:'Cheap parts, but labour intensive.', // keep it less than 10 words
+        desc:'We built a device that improves road communication', // keep it less than 10 words
         img:'img/1.jpg', //should be 4:3 ratio
     }
 ];

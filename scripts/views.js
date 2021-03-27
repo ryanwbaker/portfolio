@@ -12,7 +12,8 @@ var postContainer = document.getElementById('full-post-container');
 var projectsContainer = document.getElementById('projects');
 var aboutContainer = document.getElementById('about');
 var contactContainer = document.getElementById('contact');
-var headerContainer = document.getElementById('portfolio')
+var headerContainer = document.getElementById('portfolio');
+var postBtns = document.querySelectorAll('blog-control')
 
 var postsPerPage = 6;
 var activePage = 1;
@@ -58,8 +59,16 @@ scrollToTopBtn.addEventListener("click", () => {
  * States: Portfolio, About, Contact, or Blog Post 
 */
 
-const selectMainState = (state='portfolio') => {
+const updateMainState = (state) =>{
     location.hash = state;
+}
+
+const getMainState = () => {
+    return location.hash.slice(1);
+}
+
+const selectMainState = (state='portfolio') => {
+    updateMainState(state);
     w3_close();
     renderMainState();
 }
@@ -114,30 +123,68 @@ const renderMainState = () => {
 
     //render post
     else{
-        headerContainer.style.display='none';
-        $('#blog-content').html('')
-        portfolioNavButton.classList.add("w3-text-teal");
-        projectsContainer.style.display='none';
-        aboutNavButton.classList.remove("w3-text-teal");
-        contactNavButton.classList.remove("w3-text-teal");
-        aboutContainer.style.display='none';
-        contactContainer.style.display='none';
-
-        postContainer.style.display='block';
-        $('#blog-content').load(`posts/${state}.html`, (resp, status, xhr)=>{
-            if(status == "error"){
-                alert('Post not found! Redirecting to main portfolio.');
-                selectMainState('portfolio');
-            }
-        });
-        renderBlogButtons();
-        
+        renderPost(state);
     }
     
 }
 
-const renderBlogButtons = () =>{
-    console.log("renderingBlogButtons...")
+const returnToBlogList = () =>{
+    postContainer.style.display = 'none';
+    headerContainer.style.display = 'block';
+    projectsContainer.style.display = 'block';
+    updateMainState('portfolio');
+}
+
+const nextPost = (curPost = getMainState()) =>{
+    let ids = activePosts.map(a => a.id);
+    ind = ids.indexOf(curPost)
+    if (ids.contains(curPost) && ind < ids.length - 1){
+        renderPost(ids(ind++));
+    }
+}
+
+const prevPost = () =>{
+    let ids = activePosts.map(a => a.id);
+    ind = ids.indexOf(curPost)
+    if (ids.contains(curPost) && ind > 1){
+        renderPost(ids(ind--));
+    } 
+}
+
+const renderPost = (post=getMainState())=>{
+    headerContainer.style.display='none';
+    $('#blog-content').html('')
+    portfolioNavButton.classList.add("w3-text-teal");
+    projectsContainer.style.display='none';
+    aboutNavButton.classList.remove("w3-text-teal");
+    contactNavButton.classList.remove("w3-text-teal");
+    aboutContainer.style.display='none';
+    contactContainer.style.display='none';
+    
+    postContainer.style.display='block';
+    $('#blog-content').load(`posts/${post}.html`, (resp, status, xhr)=>{
+        if(status == "error"){
+            alert('Post not found! Redirecting to main portfolio.');
+            selectMainState('portfolio');
+        }
+    });
+    updateMainState(post);
+    renderBlogButtons();
+}
+
+
+const renderBlogButtons = (post=getMainState()) =>{
+    postBtns.forEach(el => {
+        if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
+            el.classList.add('w3-disabled')
+        }
+        else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
+            el.classList.add('w3-disabled');
+        }
+        else{
+            el.classList.remove('w3-disabled');
+        }
+    });
 }
 
 /* Render Blog States
@@ -190,10 +237,10 @@ const renderPosts = ()=>{
     var endIndex = (activePage*postsPerPage) - 1;
     activePosts.forEach((el, index)=>{
         if((index >= startIndex) && (index <= endIndex)){
-            str = str + `<div id='post-${el.id}'class="w3-third w3-container w3-margin-bottom blog-post" onclick="selectMainState('${el.id}')">
+            str = str + `<div id='post-${el.id}'class="w3-third w3-container blog-post w3-margin-bottom" onclick="selectMainState('${el.id}')">
                             <img src="${el.img}" alt="Norway" style="width:100%" class="w3-hover-opacity">
                             <div class="w3-container w3-white">
-                                <p><span class="post-title"><b>${el.title}</b></span><br>${el.type}<br>${el.date}<hr>${el.desc}</p>
+                                <p><span class="post-title"><b>${el.title.length > 44? el.title.substring(0,44) + "...": el.title}</b></span><br>${el.type}<br>${el.date}<hr>${el.desc.length > 40? el.desc.substring(0,40) + "..." : el.desc}</p>
                             </div> 
                         </div>`
         }
