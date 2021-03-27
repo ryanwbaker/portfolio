@@ -35,6 +35,5 @@ html {overflow-y: scroll;}
         justify-content: center;
         flex-wrap: nowrap;
         width: 100%;
-        min-height: 584px;
      }
  }
