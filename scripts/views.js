@@ -118,10 +118,11 @@ const renderMainState = () => {
         contactContainer.style.display='none';
 
         postContainer.style.display='block';
-        $('#blog-content').load(`posts/${state}.html`, (err)=>{
-            console.log(err)
-            // alert('Post not found! Redirecting to main portfolio.');
-            // selectMainState('portfolio');
+        $('#blog-content').load(`posts/${state}.html`, (resp, status, xhr)=>{
+            if(status == "error"){
+                alert('Post not found! Redirecting to main portfolio.');
+                selectMainState('portfolio');
+            }
         });
         
     }
