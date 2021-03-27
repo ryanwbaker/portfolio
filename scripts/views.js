@@ -74,9 +74,7 @@ const renderMainState = () => {
     }
     try{
         //update nav bar and select section (Portfolio, About, Contact)
-        console.log(`The state is: ${state}`)
         if (['portfolio', 'about', 'contact'].includes(state)){
-            console.log(`State ${state} was found in list`)
             postContainer.style.display='none';
             projectsContainer.style.display='block';
             var states = document.getElementById('nav-bar').getElementsByTagName('a');
@@ -105,7 +103,7 @@ const renderMainState = () => {
     
             postContainer.style.display='block';
             postContainer.innerHTML=''
-            $(postContainer).load(`/posts/${state}.html`).then(res => 0).catch(err => err)
+            $(postContainer).load(`'https://ryanwbaker.github.io/portfolio/posts/${state}.html'`).then(res => 0).catch(err => err)
             
         }
     }
