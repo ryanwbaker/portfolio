@@ -226,24 +226,24 @@ const blogdata = [
     //     img:'img/1.jpg',
     //     link:'posts/1.html'
     // },
-    // {
-    //     id:3, 
-    //     title:'How I fixed a $500 Hairdryer for $4.00', 
-    //     type:'Project',
-    //     date:'September 30, 2021',
-    //     desc:'Cheap parts, but labour intensive.',
-    //     img:'img/1.jpg',
-    //     link:'posts/1.html'
-    // },
-    // {
-    //     id:2, 
-    //     title:'How I fixed a $500 Hairdryer for $4.00', 
-    //     type:'Project',
-    //     date:'September 30, 2021',
-    //     desc:'Cheap parts, but labour intensive.',
-    //     img:'img/1.jpg',
-    //     link:'posts/1.html'
-    // },
+    {
+        id:3, 
+        title:'Sample Post 3', 
+        type:'Project',
+        date:'September 30, 2021',
+        desc:'Cheap parts, but labour intensive.',
+        img:'img/3.jpg',
+        link:'posts/1.html'
+    },
+    {
+        id:2, 
+        title:'Sample Post 2', 
+        type:'Project',
+        date:'September 30, 2021',
+        desc:'Cheap parts, but labour intensive.',
+        img:'img/2.jpg',
+        link:'posts/1.html'
+    },
     {
         id:1, //store HTML file as 'id.html' in 'posts' folder
         title:'How I fixed a $500 Hairdryer for $4.00', 
