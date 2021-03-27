@@ -130,11 +130,15 @@ const renderMainState = () => {
                 selectMainState('portfolio');
             }
         });
+        renderBlogButtons();
         
     }
     
 }
 
+const renderBlogButtons = () =>{
+    console.log("renderingBlogButtons...")
+}
 
 /* Render Blog States
  * States: All, Projects, Reflections 
