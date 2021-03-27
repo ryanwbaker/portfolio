@@ -3,7 +3,7 @@ var scrollToTopBtn = document.querySelector(".scrollToTopBtn"); // Scroll button
 var postElement = document.getElementById('project-cards-container'); // where posts are inserted
 var allButton = document.getElementById('filter-all');
 var portfolioNavButton = document.getElementById('portfolio-nav');
-var aboutNavButton = document.getElementById('portfolio-nav');
+var aboutNavButton = document.getElementById('about-nav');
 var contactNavButton = document.getElementById('contact-nav');
 var projectsButton = document.getElementById('filter-projects');
 var reflectionsButton = document.getElementById('filter-reflections');
@@ -11,7 +11,7 @@ var buttonContainer = document.getElementById('pagination-container');
 var postContainer = document.getElementById('full-post-container');
 var projectsContainer = document.getElementById('projects');
 var aboutContainer = document.getElementById('about');
-var contactContainer = document.getElementById('about');
+var contactContainer = document.getElementById('contact');
 
 var postsPerPage = 6;
 var activePage = 1;
@@ -72,47 +72,57 @@ const renderMainState = () => {
     else {
         state = location.hash.slice(1);
     }
-    try{
-        //update nav bar and select section (Portfolio, About, Contact)
-        if (['portfolio', 'about', 'contact'].includes(state)){
-            postContainer.style.display='none';
-            projectsContainer.style.display='block';
-            var states = document.getElementById('nav-bar').getElementsByTagName('a');
-            for(i = 0; i < states.length; i++){
-                var el = states[i];
-                if (el.id == `${state}-nav`){
-                    document.getElementById(el.dataset.controller).style.display='block';
-                    el.classList.add("w3-text-teal")
-                }
-                else{
-                    document.getElementById(el.dataset.controller).style.display='none';
-                    el.classList.remove("w3-text-teal")
-                }
-            }
-            renderPosts();
-        }
-    
-        //render post
-        else{
-            portfolioNavButton.classList.add("w3-text-teal");
-            projectsContainer.style.display='none';
-            aboutNavButton.classList.remove("w3-text-teal");
-            contactNavButton.classList.remove("w3-text-teal");
-            aboutContainer.style.display='none';
-            contactContainer.style.display='none';
-    
-            postContainer.style.display='block';
-            postContainer.innerHTML=''
-            $('#blog-content').load(`posts/${state}.html`).then(res => 0)
-            
-        }
-    }
-    catch(err){
-        // alert('Page not found! Redirecting to Main Portfolio Page.');
-        console.log(err);
-        selectMainState('portfolio');
-    }
 
+    if(state == 'portfolio'){
+        projectsContainer.style.display='block';
+        aboutContainer.style.display='none';
+        contactContainer.style.display='none';
+        postContainer.style.display='none';
+
+        portfolioNavButton.classList.add('w3-text-teal')
+        aboutNavButton.classList.remove('w3-text-teal')
+        contactNavButton.classList.remove('w3-text-teal')
+
+        updatePosts('ALL')
+        activePage = 1;
+        renderPosts();
+    }
+    else if(state == 'about'){
+        projectsContainer.style.display='none';
+        aboutContainer.style.display='block';
+        contactContainer.style.display='none';
+        postContainer.style.display='none';
+
+        portfolioNavButton.classList.remove('w3-text-teal')
+        aboutNavButton.classList.add('w3-text-teal')
+        contactNavButton.classList.remove('w3-text-teal')
+    }
+    else if(state == 'contact'){
+        projectsContainer.style.display='none';
+        aboutContainer.style.display='none';
+        contactContainer.style.display='block';
+        postContainer.style.display='none';
+
+        portfolioNavButton.classList.remove('w3-text-teal')
+        aboutNavButton.classList.remove('w3-text-teal')
+        contactNavButton.classList.add('w3-text-teal')
+    }
+        
+    //render post
+    else{
+        portfolioNavButton.classList.add("w3-text-teal");
+        projectsContainer.style.display='none';
+        aboutNavButton.classList.remove("w3-text-teal");
+        contactNavButton.classList.remove("w3-text-teal");
+        aboutContainer.style.display='none';
+        contactContainer.style.display='none';
+
+        postContainer.style.display='block';
+        postContainer.innerHTML=''
+        $('#blog-content').load(`posts/${state}.html`).then(res => 0)
+        
+    }
+    
 }
 
 
