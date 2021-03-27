@@ -108,7 +108,8 @@ const renderMainState = () => {
         }
     }
     catch(err){
-        alert('Page not found! Redirecting to Main Portfolio Page.');
+        // alert('Page not found! Redirecting to Main Portfolio Page.');
+        console.log(err);
         selectMainState('portfolio');
     }
 
