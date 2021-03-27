@@ -119,7 +119,7 @@ const renderMainState = () => {
 
         postContainer.style.display='block';
         postContainer.innerHTML=''
-        $('#blog-content').load(`posts/${state}.html`)
+        $('#blog-content').load('posts/1.html')
         
     }
     
