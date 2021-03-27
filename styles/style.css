@@ -1,0 +1,30 @@
+html {overflow-y: scroll;}
+.scrollToTopBtn {
+    border-radius: 5%;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 100;
+    display: none;
+    border: 1px solid black;
+    font-weight:bolder;
+    opacity: 30%;
+}
+
+.required {
+    font-weight:lighter;
+    font-style: italic;
+}
+
+.post-title{
+    font-size: 20px !important;
+}
+
+.blog-post:hover{
+    cursor: pointer;
+}
+ #pagination-container {
+     display:flex;
+     flex-direction: row;
+     justify-content: center;
+ }

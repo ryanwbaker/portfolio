@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<title>Ryan Baker's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/w3-template.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans">
+<link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px" onload="renderMainState()">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px; background-image: url('img/circuit-board-pattern.png');" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="img/avatar4.jpg" style="width:100%;" class="w3-round"><br><br>
+    <!-- <h4><b>Links</b></h4> -->
+  </div>
+  <div class="w3-bar-block" id="nav-bar" style="background-color:white">
+    <a id="portfolio-nav" onclick="selectMainState('portfolio')" data-controller="projects" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
+    <a id="about-nav" onclick="selectMainState('about')" data-controller="about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
+    <a id="contact-nav"  onclick="selectMainState('contact')" data-controller="contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px; ">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="img/avatar4.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity" ></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container w3-bottombar" style="margin:15px; padding:0px;">
+      <h1><b>Ryan Baker</b></h1>
+      <h4>MBA | Electrical Engineering Student</h4>
+    </div>
+</header>
+
+<!-- Projects -->
+<div id="projects">
+  <!-- Controls & Cards Container -->
+  <div class="w3-container w3-padding-large">
+    <!-- Button Controls -->
+    <div class="w3-section w3-row-padding">
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-black" onclick="updatePosts('ALL')" id="filter-all">ALL</button>
+      <button class="w3-button w3-white" onclick="updatePosts('Projects')" id="filter-projects"><i class="fa fa-wrench w3-margin-right"></i>Projects</button>
+      <button class="w3-button w3-white" onclick="updatePosts('Reflections')" id="filter-reflections"><i class="fa fa-eye w3-margin-right" ></i>Reflections</button>
+    </div>
+    <!-- End Button Controls -->
+  
+    <!-- Project Cards -->
+    <div id="project-cards-container">
+      <!--   
+        <div class="w3-third w3-container w3-margin-bottom blog-post" onclick="location.href='blog.html'">
+        <img src="img/4.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+      -->
+    </div>
+    <!-- End Project Cards -->
+  </div>
+  <!-- End Controls & Cards Container -->
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32" id="pagination-container">
+    <!-- <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-button w3-black">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div> -->
+  </div>
+  <!-- End Pagination -->
+</div>
+<!-- End Projects -->
+
+<!-- Individual Post -->
+<div class="w3-card-4 w3-margin w3-white" id="full-post-container" style="display:none;">
+  <img src="img/mountains.jpg" alt="Nature" style="width:100%">
+  <div class="w3-container">
+    <h3><b>TITLE HEADING</b></h3>
+    <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+  </div>
+
+  <div class="w3-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+
+    <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. </p>
+
+    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. <i>Curabitur tortor</i>. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. <i>Sed convallis tristique sem</i>. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. </p>
+
+    <p><i>Proin ut ligula vel nunc egestas porttitor</i>. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. <i>Nunc feugiat mi a tellus consequat imperdiet</i>. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. <i>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</i>. Cras metus. </p>
+
+    <p>Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. <b>Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue</b>. Ut eu diam at pede suscipit sodales. </p>
+
+  </div>
+  <footer class="w3-container w3-dark-grey" style="padding: 10px 50px;">
+    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top"><span class="fa fa-arrow-left"></span>  Back to Portfolio</button>
+    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top">« Previous Post</button>
+    <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top">Next Post »</button>
+  </footer>
+</div>
+<!-- End Individual Post -->
+
+
+<!-- About -->
+  <div class="w3-container w3-padding-large" id="about" style="display:none">
+    <h4><b>About Me</b></h4>
+    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <hr>
+    
+    <h4>Technical Skills</h4>
+    <!-- Progress bars / Skills -->
+    <p>Photography</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <p>Web Design</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <p>Photoshop</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <p>
+      <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom" onclick="window.open('content/Ryan Baker Resume 2021.pdf')">
+        <i class="fa fa-download w3-margin-right" ></i>Download Resume
+      </button>
+    </p>
+    <hr>
+  <!-- End About -->
+  </div>    
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-large" id="contact" style="display:none">
+    <h4><b>Contact Me</b></h4>
+    <hr class="w3-opacity">
+    <form action="https://formspree.io/f/mpzkajzg" method="POST">
+      <div class="w3-section">
+        <label>Your Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" placeholder="Nikola Tesla" required>
+      </div>
+      <div class="w3-section">
+        <label>Your Contact Information</label>
+        <input class="w3-input w3-border" type="text" name="_replyto" placeholder="Phone: (555) 555-5555, Email: you@domain.com"required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <textarea class="w3-input w3-border" name="message" placeholder="Request services, get help, or ask me anything at all!" required></textarea>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom" ><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+  <!-- End Contact -->
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button class="w3-button scrollToTopBtn w3-grey"><i class="fa fa-chevron-up"></i></button>
+  
+  <div class="w3-center w3-padding-24">Ryan Baker, 2021</a></div>
+
+<!-- End page content -->
+</div>
+
+<script src="scripts/blogdata.js"></script>
+<script src="scripts/views.js"></script>
+<script src="scripts/jquery-3.6.0.min.js"></script>
+</body>
+</html>
