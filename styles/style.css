@@ -38,10 +38,7 @@ html {overflow-y: scroll;}
         display:flex;
         flex-direction: row;
         justify-content: center;
-        margin: auto;
-        min-height: 100%;
-        min-width: 100%;
-
+        flex-wrap:nowrap;
      }
      .blog-control-container{
          float: top;
