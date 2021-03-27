@@ -127,6 +127,19 @@ const renderMainState = () => {
     }
     
 }
+const renderBlogButtons = (post=getMainState()) =>{
+    postBtns.forEach(el => {
+        if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
+            el.classList.add('w3-disabled')
+        }
+        else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
+            el.classList.add('w3-disabled');
+        }
+        else{
+            el.classList.remove('w3-disabled');
+        }
+    });
+}
 
 const returnToBlogList = () =>{
     postContainer.style.display = 'none';
@@ -137,21 +150,19 @@ const returnToBlogList = () =>{
 }
 
 const nextPost = (curPost = getMainState()) =>{
-    curPost = parseInt(curPost)
-    let ids = activePosts.map(a => a.id);
-    ind = ids.indexOf(curPost)
-    if (ids.includes(curPost) && ind > 1){
-        renderPost(ids(ind--));
-    } 
-}
-
-const prevPost = (curPost = getMainState()) =>{
-    curPost = parseInt(curPost)
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if (ids.includes(curPost) && ind < ids.length - 1){
         renderPost(ids(ind++));
     }
+}
+
+const prevPost = (curPost = getMainState()) =>{
+    let ids = activePosts.map(a => a.id);
+    ind = ids.indexOf(curPost)
+    if (ids.includes(curPost) && ind > 0){
+        renderPost(ids(ind--));
+    } 
 }
 
 const renderPost = (post=getMainState())=>{
@@ -176,19 +187,7 @@ const renderPost = (post=getMainState())=>{
 }
 
 
-const renderBlogButtons = (post=getMainState()) =>{
-    postBtns.forEach(el => {
-        if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
-            el.classList.add('w3-disabled')
-        }
-        else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
-            el.classList.add('w3-disabled');
-        }
-        else{
-            el.classList.remove('w3-disabled');
-        }
-    });
-}
+
 
 /* Render Blog States
  * States: All, Projects, Reflections 
