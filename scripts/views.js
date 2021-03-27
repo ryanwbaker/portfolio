@@ -110,6 +110,7 @@ const renderMainState = () => {
 
     //render post
     else{
+        $('#blog-content').html('')
         portfolioNavButton.classList.add("w3-text-teal");
         projectsContainer.style.display='none';
         aboutNavButton.classList.remove("w3-text-teal");
