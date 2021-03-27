@@ -103,7 +103,7 @@ const renderMainState = () => {
     
             postContainer.style.display='block';
             postContainer.innerHTML=''
-            $(`'#full-post-container'`).load(`posts/${state}.html`).then(res => 0).catch(err => err)
+            $(`'#full-post-container'`).load(`posts/${state}.html`).then(res => 0)
             
         }
     }
