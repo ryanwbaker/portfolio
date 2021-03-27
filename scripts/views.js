@@ -144,7 +144,7 @@ const nextPost = (curPost = getMainState()) =>{
     }
 }
 
-const prevPost = () =>{
+const prevPost = (curPost = getMainState()) =>{
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if (ids.includes(curPost) && ind > 1){
