@@ -132,6 +132,7 @@ const returnToBlogList = () =>{
     postContainer.style.display = 'none';
     headerContainer.style.display = 'block';
     projectsContainer.style.display = 'block';
+    renderPosts();
     updateMainState('portfolio');
 }
 
