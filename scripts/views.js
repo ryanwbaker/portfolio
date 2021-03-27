@@ -12,6 +12,7 @@ var postContainer = document.getElementById('full-post-container');
 var projectsContainer = document.getElementById('projects');
 var aboutContainer = document.getElementById('about');
 var contactContainer = document.getElementById('contact');
+var headerContainer = document.getElementById('portfolio')
 
 var postsPerPage = 6;
 var activePage = 1;
@@ -74,6 +75,7 @@ const renderMainState = () => {
     }
 
     if(state == 'portfolio'){
+        headerContainer.style.display='block';
         projectsContainer.style.display='block';
         aboutContainer.style.display='none';
         contactContainer.style.display='none';
@@ -88,6 +90,7 @@ const renderMainState = () => {
         renderPosts();
     }
     else if(state == 'about'){
+        headerContainer.style.display='block';
         projectsContainer.style.display='none';
         aboutContainer.style.display='block';
         contactContainer.style.display='none';
@@ -98,6 +101,7 @@ const renderMainState = () => {
         contactNavButton.classList.remove('w3-text-teal')
     }
     else if(state == 'contact'){
+        headerContainer.style.display='block';
         projectsContainer.style.display='none';
         aboutContainer.style.display='none';
         contactContainer.style.display='block';
@@ -110,6 +114,7 @@ const renderMainState = () => {
 
     //render post
     else{
+        headerContainer.style.display='none';
         $('#blog-content').html('')
         portfolioNavButton.classList.add("w3-text-teal");
         projectsContainer.style.display='none';
