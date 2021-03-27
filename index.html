@@ -39,10 +39,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
 <div class="w3-main" style="margin-left:300px; ">
 
   <!-- Header -->
-  <header id="portfolio">
+  <header>
     <a href="#"><img src="img/avatar4.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity" ></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container" style="margin:15px; padding:0px;">
+    <div class="w3-container" id="portfolio" style="margin:15px; padding:0px;">
       <h1><b>Ryan Baker</b></h1>
       <h4>MBA | Electrical Engineering Student</h4>
     </div>
@@ -55,7 +55,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
   <div class="w3-container w3-padding-large">
     <!-- Button Controls -->
     <div class="w3-section w3-row-padding">
-      <span class="w3-margin-right">Filter:</span> 
+      <span class="w3-margin-right w3-hide-small">Filter:</span> 
       <button class="w3-button w3-black" onclick="updatePosts('ALL')" id="filter-all">ALL</button>
       <button class="w3-button w3-white" onclick="updatePosts('Projects')" id="filter-projects"><i class="fa fa-wrench w3-margin-right"></i>Projects</button>
       <button class="w3-button w3-white" onclick="updatePosts('Reflections')" id="filter-reflections"><i class="fa fa-eye w3-margin-right" ></i>Reflections</button>
