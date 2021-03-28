@@ -131,12 +131,17 @@ const renderBlogButtons = (post=getMainState()) =>{
     postBtns.forEach(el => {
         if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
             el.classList.add('w3-disabled')
+            el.classList.remove('w3-black')
+            el.removeAttribute('onclick')
         }
         else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
             el.classList.add('w3-disabled');
         }
         else{
             el.classList.remove('w3-disabled');
+            el.classList.add('w3-black')
+            el.classList.contains('prev-post') ? el.setAttribute('onclick','prevPost()') : 0;
+            el.classList.contains('next-post') ? el.setAttribute('onclick','nextPost()')
         }
     });
 }
@@ -149,7 +154,8 @@ const returnToBlogList = () =>{
     updateMainState('portfolio');
 }
 
-const nextPost = (curPost = parseInt(getMainState())) =>{
+const nextPost = () =>{
+    curPost = parseInt(getMainState())
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind < (ids.length - 1))){
@@ -161,7 +167,8 @@ const nextPost = (curPost = parseInt(getMainState())) =>{
     }
 }
 
-const prevPost = (curPost = parseInt(getMainState())) =>{
+const prevPost = () =>{
+    curPost = parseInt(getMainState())
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind > 0)){
