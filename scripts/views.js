@@ -129,8 +129,9 @@ const renderMainState = () => {
 }
 const renderBlogButtons = () =>{
     post = parseInt(getMainState());
+    let ids = activePosts.map(a => a.id);
     postBtns.forEach(el => {
-        if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
+        if((ids.indexOf(post) == 0) && el.classList.contains('prev-post')){
             console.log('previous button disabled');
             el.classList.add('w3-disabled');
             el.classList.remove('w3-black');
