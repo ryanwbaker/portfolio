@@ -253,8 +253,8 @@ const renderPosts = ()=>{
         if((index >= startIndex) && (index <= endIndex)){
             str = str + `<div id='post-${el.id}'class="w3-third w3-container blog-post w3-margin-bottom" onclick="selectMainState('${el.id}')">
                             <img src="${el.img}" alt="Norway" style="width:100%" class="w3-hover-opacity">
-                            <div class="w3-container w3-white">
-                                <p><span class="post-title"><b>${el.title.length > 44? el.title.substring(0,44) + "...": el.title}</b></span><br>${el.type}<br>${el.date}<hr>${el.desc.length > 40? el.desc.substring(0,40) + "..." : el.desc}</p>
+                            <div class="w3-container w3-white" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block;">
+                                <p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block;"><span class="post-title"><b>${el.title}</b></span><br>${el.type}<br>${el.date}<hr>${el.desc}</p>
                             </div> 
                         </div>`
         }
