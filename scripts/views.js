@@ -159,12 +159,9 @@ const nextPost = () =>{
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind < (ids.length - 1))){
-        console.log('nextPost was found')
         renderPost(ids[++ind]);
     }
-    else{
-        console.log('nexPost was not found')
-    }
+    renderBlogButtons();
 }
 
 const prevPost = () =>{
@@ -172,12 +169,9 @@ const prevPost = () =>{
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind > 0)){
-        console.log('prevPost was found')
         renderPost(ids[--ind]);
     }
-    else{
-        console.log('prevPost was not found')
-    } 
+    renderBlogButtons();
 }
 
 const renderPost = (post=getMainState())=>{
