@@ -143,6 +143,7 @@ const renderBlogButtons = () =>{
         }
         else{
             el.classList.add('w3-black');
+            el.classList.remove('w3-disabled');
             el.classList.contains('prev-post') ? el.setAttribute('onclick','prevPost()') : 0;
             el.classList.contains('next-post') ? el.setAttribute('onclick','nextPost()') : 0;
         }
