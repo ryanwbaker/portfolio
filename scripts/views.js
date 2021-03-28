@@ -154,7 +154,7 @@ const nextPost = (curPost = parseInt(getMainState())) =>{
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind < (ids.length - 1))){
         console.log('nextPost was found')
-        renderPost(ids(ind++));
+        renderPost(ids[ind++]);
     }
     else{
         console.log('nexPost was not found')
@@ -166,7 +166,7 @@ const prevPost = (curPost = parseInt(getMainState())) =>{
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind > 0)){
         console.log('prevPost was found')
-        renderPost(ids(ind--));
+        renderPost(ids[ind--]);
     }
     else{
         console.log('prevPost was not found')
