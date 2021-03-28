@@ -149,7 +149,7 @@ const returnToBlogList = () =>{
     updateMainState('portfolio');
 }
 
-const nextPost = (curPost = getMainState()) =>{
+const nextPost = (curPost = parseInt(getMainState())) =>{
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind < (ids.length - 1))){
@@ -161,7 +161,7 @@ const nextPost = (curPost = getMainState()) =>{
     }
 }
 
-const prevPost = (curPost = getMainState()) =>{
+const prevPost = (curPost = parseInt(getMainState())) =>{
     let ids = activePosts.map(a => a.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind > 0)){
