@@ -141,7 +141,7 @@ const renderBlogButtons = (post=getMainState()) =>{
             el.classList.remove('w3-disabled');
             el.classList.add('w3-black')
             el.classList.contains('prev-post') ? el.setAttribute('onclick','prevPost()') : 0;
-            el.classList.contains('next-post') ? el.setAttribute('onclick','nextPost()')
+            el.classList.contains('next-post') ? el.setAttribute('onclick','nextPost()') : 0;
         }
     });
 }
