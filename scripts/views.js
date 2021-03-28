@@ -150,7 +150,7 @@ const returnToBlogList = () =>{
 }
 
 const nextPost = (curPost = parseInt(getMainState())) =>{
-    let ids = activePosts.map(a => a.id);
+    let ids = activePosts.map(activePosts => activePosts.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind < (ids.length - 1))){
         console.log('nextPost was found')
@@ -162,7 +162,7 @@ const nextPost = (curPost = parseInt(getMainState())) =>{
 }
 
 const prevPost = (curPost = parseInt(getMainState())) =>{
-    let ids = activePosts.map(a => a.id);
+    let ids = activePosts.map(activePosts => activePosts.id);
     ind = ids.indexOf(curPost)
     if ((ids.includes(curPost)) && (ind > 0)){
         console.log('prevPost was found')
