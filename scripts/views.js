@@ -137,7 +137,7 @@ const renderBlogButtons = () =>{
             el.classList.remove('w3-black');
             el.removeAttribute('onclick');
         }
-        else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
+        else if ((ids.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
             console.log('next button disabled');
             el.classList.add('w3-disabled');
             el.classList.remove('w3-black');
