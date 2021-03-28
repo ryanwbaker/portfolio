@@ -231,14 +231,45 @@ const renderButtons = ()=>{
     buttonContainer.innerHTML = '';
 
     // for 5 page buttons
-    var startPage = (activePage - 4) > 1 ? (activePage - 4) : 1;
-    var endPage = (startPage + 4) > numPages ? numPages : (startPage + 4);
+    numPages = Math.ceil(activePosts.length/postsPerPage);
+    var startPage; 
+    var endPage; 
+    var numPageButtons = 5;
+    if(numPages < numPageButtons){
+        startPage = 1;
+        endPage = numPages;
+    }
+    else if((activePage - parseInt(numPageButtons/2)) <= 1){
+        startPage = 1;
+        endPage = numPageButtons;
+    } 
+    else if((activePage + parseInt(numPageButtons/2)) > numPages){
+        startPage = numPages - numPageButtons + 1;
+        endPage = numPages;
+    }
+    else{
+        startPage = activePage - parseInt(numPageButtons/2);
+        endPage = activePage + parseInt(numPageButtons/2);
+    }
+    // (activePage - additionalButtons) > 1 ? startPage = (activePage - parseInt(buttonsToDisplay/2)) : startPage = activePage;
+    // (activePage + parseInt(buttonsToDisplay/2)) > numPages ? endPage = numPages : endPage = parseInt(buttonsToDisplay/2);
     
-    (activePage == 1) ? str=str : str = str + `<a id='page-left' class="w3-bar-item w3-button w3-hover-black" onclick="prevPage()">«</a>`
+    if(activePage == 1){
+        str = str + `<a id='page-left' class="w3-bar-item w3-button w3-disabled">«</a>`
+    }
+    else{
+        str = str + `<a id='page-left' class="w3-bar-item w3-button w3-hover-black" onclick="prevPage()">«</a>`
+    }
     for(i = startPage; i <= endPage; i++){
         str = str + `<a id='page-button-${i}' class="w3-bar-item w3-button w3-hover-black" onclick="getPage(this.id)">${i}</a>`
     }
-    (activePage == numPages) ? str=str : str = str + `<a id='page-right' class="w3-bar-item w3-button w3-hover-black" onclick="nextPage()">»</a>`
+    if(activePage == numPages) {
+        str = str + `<a id='page-right' class="w3-bar-item w3-button w3-disabled">»</a>`
+    }  
+    else{
+        str = str + `<a id='page-right' class="w3-bar-item w3-button w3-hover-black" onclick="nextPage()">»</a>`
+    } 
+        
 
     buttonContainer.innerHTML = str;
     document.getElementById(`page-button-${activePage}`).classList.add('w3-dark-grey')
