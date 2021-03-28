@@ -130,18 +130,21 @@ const renderMainState = () => {
 const renderBlogButtons = (post=getMainState()) =>{
     postBtns.forEach(el => {
         if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
-            el.classList.add('w3-disabled')
-            el.classList.remove('w3-black')
-            el.removeAttribute('onclick')
+            console.log('previous button disabled');
+            el.classList.add('w3-disabled');
+            el.classList.remove('w3-black');
+            el.removeAttribute('onclick');
         }
         else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
+            console.log('next button disabled');
             el.classList.add('w3-disabled');
-            el.classList.remove('w3-black')
+            el.classList.remove('w3-black');
             el.removeAttribute('onclick');
         }
         else{
+            console.log('enabled ' + el.classList + ' button');
             el.classList.remove('w3-disabled');
-            el.classList.add('w3-black')
+            el.classList.add('w3-black');
             el.classList.contains('prev-post') ? el.setAttribute('onclick','prevPost()') : 0;
             el.classList.contains('next-post') ? el.setAttribute('onclick','nextPost()') : 0;
         }
