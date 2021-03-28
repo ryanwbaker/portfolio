@@ -13,7 +13,7 @@ var projectsContainer = document.getElementById('projects');
 var aboutContainer = document.getElementById('about');
 var contactContainer = document.getElementById('contact');
 var headerContainer = document.getElementById('portfolio');
-var postBtns = document.querySelectorAll('blog-control')
+var postBtns = document.querySelectorAll('.blog-control')
 
 var postsPerPage = 6;
 var activePage = 1;
