@@ -136,6 +136,8 @@ const renderBlogButtons = (post=getMainState()) =>{
         }
         else if ((activePosts.indexOf(post) == (activePosts.length - 1)) && el.classList.contains('next-post')){
             el.classList.add('w3-disabled');
+            el.classList.remove('w3-black')
+            el.removeAttribute('onclick')
         }
         else{
             el.classList.remove('w3-disabled');
