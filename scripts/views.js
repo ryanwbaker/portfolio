@@ -127,7 +127,8 @@ const renderMainState = () => {
     }
     
 }
-const renderBlogButtons = (post=getMainState()) =>{
+const renderBlogButtons = () =>{
+    post = parseInt(getMainState());
     postBtns.forEach(el => {
         if((activePosts.indexOf(post) == 0) && el.classList.contains('prev-post')){
             console.log('previous button disabled');
