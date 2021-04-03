@@ -1,5 +1,13 @@
 const blogdata = [
     {
+        id:4, //store HTML file as '[id#].html' in 'posts' folder
+        title:'Looking Back on ENEL 361', 
+        type:'Reflection', //'Project' or 'Reflection'
+        date:'April 2, 2021',
+        desc:'So this is why we studied chemistry...', // keep it less than 10 words
+        img:'img/361_card.jpg', //should be 4:3 ratio
+    },
+    {
         id:3, //store HTML file as '[id#].html' in 'posts' folder
         title:'Looking Back on ENEL 327', 
         type:'Reflection', //'Project' or 'Reflection'
@@ -12,7 +20,7 @@ const blogdata = [
         title:'Looking Back on ENCM 369', 
         type:'Reflection', //'Project' or 'Reflection'
         date:'April 2, 2021',
-        desc:'This was my favourite course of 2021!', // keep it less than 10 words
+        desc:'This was my favourite ILS course!', // keep it less than 10 words
         img:'img/mips_card.jpg', //should be 4:3 ratio
     },
     {
