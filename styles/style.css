@@ -44,6 +44,9 @@ html {overflow-y: scroll;}
     max-width: 90%;
     margin: 0 auto;
 }
+.w3-container > img{
+    max-width: 100%;
+}
  @media only screen and (max-width: 600px){
      #avatar {
          margin: 8 0 0 0 !important;
