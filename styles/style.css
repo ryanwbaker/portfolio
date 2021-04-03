@@ -10,7 +10,6 @@ html {overflow-y: scroll;}
     font-weight:bolder;
     opacity: 30%;
 }
-
 .required {
     font-weight:lighter;
     font-style: italic;

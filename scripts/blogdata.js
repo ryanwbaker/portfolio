@@ -1,5 +1,13 @@
 const blogdata = [
     {
+        id:3, //store HTML file as '[id#].html' in 'posts' folder
+        title:'Looking Back on ENEL 327', 
+        type:'Reflection', //'Project' or 'Reflection'
+        date:'April 2, 2021',
+        desc:'Signals and Transforms: Challenging but Rewarding', // keep it less than 10 words
+        img:'img/327_card.jpg', //should be 4:3 ratio
+    },
+    {
         id:2, //store HTML file as '[id#].html' in 'posts' folder
         title:'Looking Back on ENCM 369', 
         type:'Reflection', //'Project' or 'Reflection'
