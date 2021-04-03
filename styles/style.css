@@ -14,7 +14,10 @@ html {overflow-y: scroll;}
     font-weight:lighter;
     font-style: italic;
 }
-
+#project-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
 .post-title{
     font-size: 16px !important;
 }
