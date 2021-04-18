@@ -12,71 +12,80 @@
 <link rel="icon" href="content/favicon.ico" type="image/x-icon" />
 
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Open Sans", sans-serif
+    }
 </style>
+
 <body class="w3-light-grey w3-content" style="max-width:1600px" onload="renderMainState()">
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px; background-image: url('img/circuit-board-pattern.png');" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <a href="img/avatar4.jpg" target="_blank"><img src="img/avatar4.jpg" style="width:100%;" class="w3-round"><br><br></a>
-    <!-- <h4><b>Links</b></h4> -->
-  </div>
-  <div class="w3-bar-block" id="nav-bar" style="background-color:white">
-    <a id="portfolio-nav" onclick="selectMainState('portfolio')" data-controller="projects" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a id="about-nav" onclick="selectMainState('about')" data-controller="about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a id="contact-nav"  onclick="selectMainState('contact')" data-controller="contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-  </div>
-</nav>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px; background-image: url('img/circuit-board-pattern.png');" id="mySidebar"><br>
+        <div class="w3-container">
+            <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <a href="img/avatar4.jpg" target="_blank"><img src="img/avatar4.jpg" style="width:100%;" class="w3-round"><br><br></a>
+            <!-- <h4><b>Links</b></h4> -->
+        </div>
+        <div class="w3-bar-block" id="nav-bar" style="background-color:white">
+            <a id="portfolio-nav" onclick="selectMainState('portfolio')" data-controller="projects" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
+            <a id="about-nav" onclick="selectMainState('about')" data-controller="about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+            <a id="contact-nav" onclick="selectMainState('contact')" data-controller="contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+        </div>
+    </nav>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px; ">
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px; ">
 
-  <!-- Header -->
-  <header>
-    <a href="#"><img src="img/avatar4.jpg" style="width:65px;" class="w3-circle w3-right w3-margin-right w3-margin-top w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container" id="portfolio" style="margin:15px; padding:0px;">
-      <h1><b>Ryan Baker</b></h1>
-      <h5>MBA | Electrical Engineering Student</h5>
-    </div>
-</header>
+        <!-- Header -->
+        <header>
+            <a href="#"><img src="img/avatar4.jpg" style="width:65px;" class="w3-circle w3-right w3-margin-right w3-margin-top w3-hide-large w3-hover-opacity"></a>
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+            <div class="w3-container" id="portfolio" style="margin:15px; padding:0px;">
+                <h1><b>Ryan Baker</b></h1>
+                <h5>MBA | Electrical Engineering Student</h5>
+            </div>
+        </header>
 
-<!-- Projects -->
-<div id="projects">
-  <div class= "w3-container w3-bottombar " style="margin: 15px;"></div>
-  <!-- Controls & Cards Container -->
-  <div class="w3-container w3-padding-large">
-    <!-- Button Controls -->
-    <div class="w3-section w3-row-padding button-container">
-      <span class="w3-margin-right w3-hide-small">Filter:</span> 
-      <button class="w3-button w3-black" onclick="updatePosts('ALL')" id="filter-all">ALL</button>
-      <button class="w3-button w3-white" onclick="updatePosts('Projects')" id="filter-projects"><i class="fa fa-wrench"></i>  Projects</button>
-      <button class="w3-button w3-white" onclick="updatePosts('Reflections')" id="filter-reflections"><i class="fa fa-eye" ></i>  Reflections</button>
-    </div>
-    <!-- End Button Controls -->
-  
-    <!-- Project Cards -->
-    <div id="project-cards-container">
-      <!--   
+        <!-- Projects -->
+        <div id="projects">
+            <div class="w3-container w3-bottombar " style="margin: 15px;"></div>
+            <!-- Controls & Cards Container -->
+            <div class="w3-container w3-padding-large">
+                <!-- Button Controls -->
+                <div class="w3-section w3-row-padding button-container">
+                    <span class="w3-margin-right w3-hide-small">Filter:</span>
+                    <button class="w3-button w3-black" onclick="updatePosts('ALL')" id="filter-all">ALL</button>
+                    <button class="w3-button w3-white" onclick="updatePosts('Projects')" id="filter-projects"><i class="fa fa-wrench"></i>  Projects</button>
+                    <button class="w3-button w3-white" onclick="updatePosts('Reflections')" id="filter-reflections"><i class="fa fa-eye" ></i>  Reflections</button>
+                </div>
+                <!-- End Button Controls -->
+
+                <!-- Project Cards -->
+                <div id="project-cards-container">
+                    <!--   
         <div class="w3-third w3-container w3-margin-bottom blog-post" onclick="location.href='blog.html'">
         <img src="img/4.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
       -->
-    </div>
-    <!-- End Project Cards -->
-  </div>
-  <!-- End Controls & Cards Container -->
+                </div>
+                <!-- End Project Cards -->
+            </div>
+            <!-- End Controls & Cards Container -->
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32" id="pagination-container">
-    <!-- <div class="w3-bar">
+            <!-- Pagination -->
+            <div class="w3-center w3-padding-32" id="pagination-container">
+                <!-- <div class="w3-bar">
       <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
       <a href="#" class="w3-bar-item w3-button w3-black">1</a>
       <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
@@ -84,23 +93,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
       <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
       <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
     </div> -->
-  </div>
-  <!-- End Pagination -->
-</div>
-<!-- End Projects -->
+            </div>
+            <!-- End Pagination -->
+        </div>
+        <!-- End Projects -->
 
-<!-- Individual Post -->
-<div class="w3-card-4 w3-margin w3-white" id="full-post-container" style="display:none;">
-  <!-- Button Controls -->
-  <div class="w3-container w3-dark-grey button-container blog-control-container" style="padding: 5px;">
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control" onclick="returnToBlogList()"><span class="fa fa-arrow-left"></span>  Portfolio</button>
-    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top blog-control prev-post" onclick="prevPost()">« Prev</button>
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control next-post" onclick="nextPost()">Next »</button>
-  </div>
-  <!-- End Button Controls -->
-  <!-- Blog Content **Banner Image Should be Radio 4:1 Width to Height** -->
-  <div id="blog-content">
-    <!-- <div class="w3-container">
+        <!-- Individual Post -->
+        <div class="w3-card-4 w3-margin w3-white" id="full-post-container" style="display:none;">
+            <!-- Button Controls -->
+            <div class="w3-container w3-dark-grey button-container blog-control-container" style="padding: 5px;">
+                <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control" onclick="returnToBlogList()"><span class="fa fa-arrow-left"></span>  Portfolio</button>
+                <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top blog-control prev-post" onclick="prevPost()">« Prev</button>
+                <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control next-post" onclick="nextPost()">Next »</button>
+            </div>
+            <!-- End Button Controls -->
+            <!-- Blog Content **Banner Image Should be Radio 4:1 Width to Height** -->
+            <div id="blog-content">
+                <!-- <div class="w3-container">
       <h3><b>Title of Sample Post</b></h3>
     </div>
     <img src="img/3.jpg" alt="Nature" style="width:100%">
@@ -109,103 +118,146 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
       <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
     </div> -->
-  </div>
-  <!-- End Blog Content -->
-  <footer class="w3-container w3-dark-grey button-container blog-control-container" style="padding: 5px;">
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control" onclick="returnToBlogList()"><span class="fa fa-arrow-left"></span>  Portfolio</button>
-    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top blog-control prev-post" onclick="prevPost()">« Prev</button>
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control next-post" onclick="nextPost()">Next »</button>
-  </footer>
-</div>
-<!-- End Individual Post -->
+            </div>
+            <!-- End Blog Content -->
+            <footer class="w3-container w3-dark-grey button-container blog-control-container" style="padding: 5px;">
+                <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control" onclick="returnToBlogList()"><span class="fa fa-arrow-left"></span>  Portfolio</button>
+                <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom w3-margin-top blog-control prev-post" onclick="prevPost()">« Prev</button>
+                <button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-margin-top blog-control next-post" onclick="nextPost()">Next »</button>
+            </footer>
+        </div>
+        <!-- End Individual Post -->
 
 
-<!-- About -->
-<div class="w3-container w3-padding-large" id="about" style="display:none">
-  <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom" onclick="window.open('content/Ryan Baker Resume 2021.pdf')">
+        <!-- About -->
+        <div class="w3-container w3-padding-large" id="about" style="display:none">
+            <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom" onclick="window.open('content/Ryan Baker Resume 2021.pdf')">
     <i class="fa fa-download w3-margin-right" ></i>Download Resume
   </button>
-  <div class= "w3-container w3-topbar"></div>
+            <div class="w3-container w3-topbar"></div>
 
-    <h3><b>About Me</b></h3>
-    <p>Ever since I was young, I've always had a fascination with how things worked. In fact, I'd say that my curiosity is my biggest strength. In my younger years, I would always take things apart and put them back together again, just for fun. Fast forward to high school, I played many sports, and suffered some injuries that required several surgeries. The surgeries (like most things) sparked my curiosity, but this time with how the human body worked, which led me into studying kinesiology right out of high school. It's funny, looking back, my parents really encouraged me to go into engineering school, but my curiosity got the better of me and I was set on learning about the human body. After completing kinesiology and working as a personal trainer for a few years, while I valued the knowledge I gained in kinesiology, I found that I was just not passionate about working in that industry (training unmotivated people, the rise of misinformation on the internet, etc.). I thought to myself "What is something that is always changing, but also valuable in any industry? Business." This led me to pursuing a Master's Degree in Business Administration.</p><p>While the business knowledge I gained was also incredibly valuable, I once again found myself wanting more. My business education has given me an entrepreneurial mindset that loves to think about innovation and solving problems...but there was one problem. I didn't know how to build the solutions I dreamed up.</p><p>Finally, at 30 years old, I decided to pursue engineering school. I completed a year of Electrical Engineering Technology at BCIT, but due to a family-related difficulty, I was forced to take a year off. When the year was over, I was not allowed back into the program. This turned to be a blessing in disguise, as I decided to apply for engineering school at the University of Calgary, and got accepted!</p><p>Having been an engineering student for awhile now, I can say with absolute confidence that engineering is the right profession for me. Though, academically, these past few years have been the most difficult, they have also been the most enjoyable. It's true what they say about finding your passion, "do what you love and you'll never work a day in your life". I understand that statement on an intimate level since I began studying engineering. Some of the biggest takeaways I've had from this academic adventure are: <ul><li>Finish what you start,</li><li>Don't be afraid of learning, and</li><li>Sometimes, your parents really do know best!</li></ul></p>
-    <hr>
-    
-    <!-- Progress bars / Skills -->
-    <h3><b>Key Accomplishments</b></h3>
-    <ul><li>Note: Only <i>key</i> accomplishments are here. These are the top accomplishments that I've personally found to be the most satisfying. See my portfolio, download my resume (at the top of this page), or <a>contact me</a> for a more complete accounting of my accomplishments.</li></ul>
-    <h4><b>Eliminating My Own Job With Programming (Twice)</b></h4>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95% Personal Satisfaction</div>
+            <h3><i class="fa fa-male" aria-hidden="true"></i><b style="margin-left: 20px;">About Me</b></h3>
+            <p>Ever since I was young, I've always had a fascination with how things worked. In fact, I'd say that my curiosity is my biggest strength. In my younger years, I would always take things apart and put them back together again, just for fun.
+                Fast forward to high school, I played many sports, and suffered some injuries that required several surgeries. The surgeries (like most things) sparked my curiosity, but this time with how the human body worked, which led me into studying
+                kinesiology right out of high school. It's funny, looking back, my parents really encouraged me to go into engineering school, but my curiosity got the better of me and I was set on learning about the human body. After completing kinesiology
+                and working as a personal trainer for a few years, while I valued the knowledge I gained in kinesiology, I found that I was just not passionate about working in that industry (training unmotivated people, the rise of misinformation on
+                the internet, etc.). I thought to myself "What is something that is always changing, but also valuable in any industry? Business." This led me to pursuing a Master's Degree in Business Administration.</p>
+            <p>While the business knowledge I gained was also incredibly valuable, I once again found myself wanting more. My business education has given me an entrepreneurial mindset that loves to think about innovation and solving problems...but there
+                was one problem. I didn't know how to build the solutions I dreamed up.</p>
+            <p>Finally, at 30 years old, I decided to pursue engineering school. I completed a year of Electrical Engineering Technology at BCIT, but due to a family-related difficulty, I was forced to take a year off. When the year was over, I was not allowed
+                back into the program. This turned to be a blessing in disguise, as I decided to apply for engineering school at the University of Calgary, and got accepted!</p>
+            <p>Having been an engineering student for awhile now, I can say with absolute confidence that engineering is the right profession for me. Though, academically, these past few years have been the most difficult, they have also been the most enjoyable.
+                It's true what they say about finding your passion, "do what you love and you'll never work a day in your life". I understand that statement on an intimate level since I began studying engineering. Some of the biggest takeaways I've had
+                from this academic adventure are:
+                <ul>
+                    <li>Finish what you start,</li>
+                    <li>Don't be afraid of learning, and</li>
+                    <li>Sometimes, your parents really do know best!</li>
+                </ul>
+            </p>
+            <hr>
+
+            <!-- Progress bars / Skills -->
+            <h3><i class="fa fa-key" aria-hidden="true"></i><b style="margin-left: 20px;">Key Accomplishments</b></h3>
+            <ul>
+                <li>Note: Only <i>key</i> accomplishments are here. These are the top accomplishments that I've personally found to be the most satisfying. See my portfolio, download my resume (at the top of this page), or <a>contact me</a> for a more complete
+                    accounting of my accomplishments.</li>
+            </ul>
+            <h4><b>Eliminating My Own Job With Programming (Twice)</b></h4>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95% Personal Satisfaction</div>
+            </div>
+            <ul>
+                <li>First time was as a payroll administrator at a manufacturing plant.</li>
+                <li>Second time was as a payroll administrator for a construction company.</li>
+                <li>Main software used was Microsoft Excel/VBA in both cases.</li>
+                <li>Since then, I've learned several programming languages (mainly C, python, and JavaScript), which have helped to further automate virtually any other task I take on.</li>
+                <li>Learning programming and automation is the largest reason I have been able to hold a good job in business adminstration while continuing studies. </li>
+            </ul>
+            <h4><b>Spearheading the Implementation of Company Wide Enterprise Resource Planning (ERP) Software</b></h4>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">90% Personal Satisfaction</div>
+            </div>
+            <ul>
+                <li>Successfully researched and implemented the adoption of Sage 100 Contractor (an ERP program that manages all aspects of a small-to-medium construction businesses, including inventory, accounting, and project management).</li>
+                <li>Conservative cost savings of over $100,000 per year.</li>
+            </ul>
+            <h4><b>Designing and Building a Variable DC Power Supply From Scratch</b></h4>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">85% Personal Satisfaction</div>
+            </div>
+            <ul>
+                <li>BCIT Electrical Engineering Technology Year 1 capstone project</li>
+                <li>Required a wide variety of technical skills, including AutoCAD, Altium Designer, soldering skills, and technical mechanical/electrical knowledge to complete</li>
+                <li>See the <a>portfolio post for more information</a></li>
+            </ul>
+            <hr>
+            <h3><i class="fa fa-gamepad" aria-hidden="true"></i><b style="margin-left: 20px;">Passions & Hobbies</b></h3>
+            <p>Between work and studying, I don't have a lot of time to pursue a hobby <i>per se</i>, but when I have some free time, it usually gets spent on one of the following activities:
+                <ul>
+                    <li>Building or repairing things (you'll find that my <a>portfolio</a> has several repair projects).</li>
+                    <li>Movies/TV</li>
+                    <li>Cooking</li>
+                    <li>Fitness</li>
+                </ul>
+            </p>
+            <h3><i class="fa fa-briefcase" aria-hidden="true"></i><b style="margin-left: 20px;">Freelance Services</b></h3>
+            <p>I love small projects and helping people. Feel free to <a href="https://ryanwbaker.github.io/portfolio/#contact" target="_blank">contact me</a> if you think I could be of assistance. If I can't help you, I'll know somebody who can. I have
+                freelance experience in the following areas:
+                <ul>
+                    <li>Evaluating business plans and overall strategies of small businesses</li>
+                    <li>Developing better administrative workflows in small businesses</li>
+                    <li>Business administration jobs/projects (payroll, invoicing, general accounting, etc)</li>
+                    <li>Repair of electrical or electronic devices</li>
+                    <li>Basic CAD design</li>
+                    <li>Building a basic website from scratch</li>
+                    <li>General computer technology/IT assistance (such as server management, remote connections, or computer troubleshooting)</li>
+                    <li>Fitness and nutrition (though I let my CSEP certification expire)</li>
+                    <li>Proofreading and writing assistance</li>
+                    <li>Tutoring (especially in math or any science up to first year university level)</li>
+                </ul>
+            </p>
+        </div>
+        <!-- End About -->
+
+        <!-- Contact Section -->
+        <div class="w3-container w3-padding-large" id="contact" style="display:none">
+            <div class="w3-topbar"></div>
+            <h4><i class="fa fa-envelope" aria-hidden="true"></i><b style="margin-left: 20px;">Contact Me</b></h4>
+            <hr class="w3-opacity">
+            <form action="https://formspree.io/f/mpzkajzg" method="POST">
+                <div class="w3-section">
+                    <label>Your Name</label>
+                    <input class="w3-input w3-border" type="text" name="Name" placeholder="Nikola Tesla" required>
+                </div>
+                <div class="w3-section">
+                    <label>Your Email</label>
+                    <input class="w3-input w3-border" type="text" name="_replyto" placeholder="you@domain.com" required>
+                </div>
+                <div class="w3-section">
+                    <label>Phone Number <i>(Optional)</i></label>
+                    <input class="w3-input w3-border" type="text" name="phone" placeholder="(555) 555-5555">
+                </div>
+                <div class="w3-section">
+                    <label>Message</label>
+                    <textarea class="w3-input w3-border" name="message" placeholder="Request services, get help, or ask me anything at all!" required></textarea>
+                </div>
+                <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+            </form>
+            <!-- End Contact -->
+        </div>
+
+        <!-- Scroll To Top Button -->
+        <button class="w3-button scrollToTopBtn w3-grey"><i class="fa fa-chevron-up"></i></button>
+
+        <div class="w3-center w3-padding-24"><a href="https://www.ic.gc.ca/eic/site/cipointernet-internetopic.nsf/eng/h_wr02281.html#indicatingCopyright" target="_blank"> &#169; Ryan Baker 2021</a></div>
+
+        <!-- End page content -->
     </div>
-    <ul><li>First time was as a payroll administrator at a manufacturing plant.</li><li>Second time was as a payroll administrator for a construction company.</li><li>Main software used was Microsoft Excel/VBA in both cases.</li><li>Since then, I've learned several programming languages (mainly C, python, and JavaScript), which have helped to further automate virtually any other task I take on.</li><li>Learning programming and automation is the largest reason I have been able to hold a good job in business adminstration while continuing studies. </li></ul>
-    <h4><b>Spearheading the Implementation of Company Wide Enterprise Resource Planning (ERP) Software</b></h4>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">90% Personal Satisfaction</div>
-    </div>
-    <ul><li>Successfully researched and implemented the adoption of Sage 100 Contractor (an ERP program that manages all aspects of a small-to-medium construction businesses, including inventory, accounting, and project management).</li><li>Conservative cost savings of over $100,000 per year.</li></ul>
-    <h4><b>Designing and Building a Variable DC Power Supply From Scratch</b></h4>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">85% Personal Satisfaction</div>
-    </div>
-    <ul><li>BCIT Electrical Engineering Technology Year 1 capstone project</li><li>Required a wide variety of technical skills, including AutoCAD, Altium Designer, soldering skills, and technical mechanical/electrical knowledge to complete</li><li>See the <a>portfolio post for more information</a></li></ul>
-    <hr>
-    <h3><b>Passions & Hobbies</b></h3>
-    <p>Between work and studying, I don't have a lot of time to pursue a hobby <i>per se</i>, but when I have some free time, it usually gets spent on one of the following activities:<ul><li>Building or repairing things (you'll find that my <a>portfolio</a> has several repair projects).</li><li>Movies/TV</li><li>Cooking</li><li>Fitness</li></ul></p>
-    <h3><b>Freelance Services</b></h3>
-    <p>I love small projects and helping people. Feel free to <a href="https://ryanwbaker.github.io/portfolio/#contact" target="_blank">contact me</a> if you think I could be of assistance. If I can't help you, I'll know somebody who can. I have freelance experience in the following areas:<ul>
-      <li>Evaluating business plans and overall strategies of small businesses</li>
-      <li>Developing better administrative workflows in small businesses</li>
-      <li>Business administration jobs/projects (payroll, invoicing, general accounting, etc)</li>
-      <li>Repair of electrical or electronic devices</li>
-      <li>Basic CAD design</li>
-      <li>Building a basic website from scratch</li>
-      <li>General computer technology/IT assistance (such as server management, remote connections, or computer troubleshooting)</li>
-      <li>Fitness and nutrition (though I let my CSEP certification expire)</li>
-      <li>Proofreading and writing assistance</li>
-      <li>Tutoring (especially in math or any science up to first year university level)</li>
-    </ul>
-    </p>
-  </div>
-  <!-- End About -->
 
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-large" id="contact" style="display:none">
-    <div class="w3-topbar"></div>
-    <h4><b>Contact Me</b></h4>
-    <hr class="w3-opacity">
-    <form action="https://formspree.io/f/mpzkajzg" method="POST">
-      <div class="w3-section">
-        <label>Your Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" placeholder="Nikola Tesla" required>
-      </div>
-      <div class="w3-section">
-        <label>Your Email</label>
-        <input class="w3-input w3-border" type="text" name="_replyto" placeholder="you@domain.com"required>
-      </div>
-      <div class="w3-section">
-        <label>Phone Number <i>(Optional)</i></label>
-        <input class="w3-input w3-border" type="text" name="phone" placeholder="(555) 555-5555">
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <textarea class="w3-input w3-border" name="message" placeholder="Request services, get help, or ask me anything at all!" required></textarea>
-      </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom" ><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-    </form>
-  <!-- End Contact -->
-  </div>
-
-  <!-- Scroll To Top Button -->
-  <button class="w3-button scrollToTopBtn w3-grey"><i class="fa fa-chevron-up"></i></button>
-  
-  <div class="w3-center w3-padding-24"><a href="https://www.ic.gc.ca/eic/site/cipointernet-internetopic.nsf/eng/h_wr02281.html#indicatingCopyright" target="_blank"> &#169; Ryan Baker 2021</a></div>
-
-<!-- End page content -->
-</div>
-
-<script src="scripts/blogdata.js"></script>
-<script src="scripts/views.js"></script>
-<script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/blogdata.js"></script>
+    <script src="scripts/views.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
 </body>
+
 </html>
