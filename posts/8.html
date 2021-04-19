@@ -1,0 +1,63 @@
+<div class="w3-container" style="text-align: center;">
+    <h3><b>ENEL 300 Project: Honkly</b></h3>
+</div>
+<!-- Banner Image Should be Ratio 4:1 Width to Height -->
+<div class="w3-container blog-img-lg" style="text-align: center; max-width: 600px;">
+    <a href="img/honkly-card.jpeg" target="_blank"><img src="img/honkly-card.jpeg" alt="Honkly"></a>
+</div>
+
+<div class="w3-container">
+    <h5><span class="w3-opacity"> April 19, 2021</span></h5>
+    <h5>A Year 2 "Capstone" Project</h5>
+    <p>The "Integrated Learning Stream" is a program for University of Calgary Electrical Engineering students in their second year. The best part of the program is that students work together in a small group (4 students) to produce a single large project
+        that incorporates knowledge from across all courses of the entire semester. The project my group chose was 'Honkly', a custom car horn.</p>
+    <h5><i class="fa fa-list-ol" aria-hidden="true" style="margin-right: 20px;"></i><b>Iterations</b></h5>
+    <p>One of the core philosophies of Agile project management is to have a potentially usable product with <i>each iteration.</i> This wasn't <i>entirely</i> possible with COVID and the lack of knowledge in the beginning of the semester, but by the end
+        of the term, we had a physical prototype! The hardest part of the entire process was committing to the features to implement for each Sprint. Here were some changes that happened with each iteration:
+        <ol>
+            <li>Operational Amplifier Used</li>
+            <ul>
+                <li>The operational amplifier that came with the ILS parts kit was not suitable to power the 8 ohm speaker we opted to use. This required researching a new, inexpensive operational amplifier.</li>
+                <li>We decided on the <a href="https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm386">LM386</a> due to its widely supported usage (it was really easy to find schematics
+                    and applications on the internet), and it's ability to take 12V input, produce up to 10V output, and provide enough current.</li>
+            </ul>
+            <li>Controller placement</li>
+            <ul>
+                <li>Originally, the controller was planned to be attached somehow to the steering wheel, so it could be easily accessed.</li>
+                <li>When we realized that it was pretty difficult to come up with a solution that would fit <i>all</i> steering wheels, we decided to find another way. After looking at some competitor products, we found that most other solutions don't provide
+                    specialized housing. We decided to follow this methodology, since it would allow users to place the control switches where it suited them best. Part of the "business plan" for this product (would it be real) would be to provide detailed
+                    installation instructions and a support team to help with particularly difficult installations.</li>
+                <li>My car was used for modeling. For our physical prototype, we managed to design and 3D print some custom housing that fit where my ash tray used to be:
+                    <div class="w3-container blog-img-sm" style="text-align: center;">
+                        <a href="img/ash-tray-housing.JPG" target="_blank"><img src="img/ash-tray-housing.JPG" alt="Ash Tray Housing"></a>
+                    </div>
+                </li>
+            </ul>
+            <li>Power</li>
+            <ul>
+                <li>Originally, it was planned that the power would come from the fuse box.</li>
+                <li>After committing to the 3D printed ash tray housing, we found that the DC lighter could be used with <a href="https://www.digikey.ca/en/products/detail/panduit-corp/DV18-250P-MY/448249?utm_adgroup=Connectors%2C%20Interconnects&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Supplier_Panduit%20Corp_0298_Co-op&utm_term=&productid=448249&gclid=Cj0KCQjw1PSDBhDbARIsAPeTqrdQysZf7d3UY-DmuEx-96nU9_Z87FknWMLDhX0IWTA4rzl_cRMZQU8aAjeNEALw_wcB">piggyback terminals</a>.
+                    This allowed the entire system to be switched on and off with as the keys turned on and off, <i>without going into the fuse box,</i> since the DC lighter was already connected to the accessory switch of the car.</li>
+            </ul>
+            <li>Sound Processing</li>
+            <ul>
+                <li>Orignally, the PIC controller provided in the ILS kit was going to be used in conjunction with an SD card to enable sound file selection and processing.</li>
+                <li>Due to how late this was taught in ENCM 369, our group decided to commit to a different solution. We were able to find a <a href="http://www.icstation.com/voice-playback-module-sound-module-music-player-voice-broadcast-device-development-board-arduino-p-6148.html">YS-M3</a>                    board that did exactly what we wanted for less than $10.00.</li>
+            </ul>
+        </ol>
+        <div class="w3-container" style="text-align: center;">
+            <p>Here is a quick demo of our "final" product:</p>
+            <p>
+                <iframe width="560 " height="315 " src="https://www.youtube.com/embed/2CCQ39ZPYQ0 " title="YouTube video player " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+            </p>
+        </div>
+    </p>
+    <h5><i class="fa fa-archive " aria-hidden="true " style="margin-right: 20px;"></i><b>My Biggest Takeaway</b></h5>
+    <p>
+        <ul>
+            <li>For how complicated a "custom car horn" seems like it would be to build on the outside, it wasn't that difficult! It came down to breaking the problem down into manageable steps, and having a good team that could chomp away at the bits until
+                we had a working prototype. It was extremely rewarding to build something that worked in the end!</li>
+        </ul>
+    </p>
+
+</div>
