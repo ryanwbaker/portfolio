@@ -77,5 +77,13 @@ const blogdata = [{
         date: 'October 8, 2018',
         desc: 'Two Ovens Failed at the Same Time on THANKSGIVING DAY!', // keep it less than 10 words
         img: 'img/thanksgiving_card.JPG', //should be 4:3 ratio
+    },
+    {
+        id: 11, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'Building a Power Supply',
+        type: 'Project', //'Project' or 'Reflection'
+        date: 'April 15, 2018',
+        desc: 'BCIT Year 1 Capstone Project', // keep it less than 10 words
+        img: 'img/2.jpg', //should be 4:3 ratio
     }
 ];
