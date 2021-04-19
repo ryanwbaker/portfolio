@@ -12,47 +12,67 @@
 <link rel="icon" href="content/favicon.ico" type="image/x-icon" />
 <!-- Copy Start -->
 <div class="w3-container" style="text-align: center;">
-    <h3><b>ENEL 300 Teamwork</b></h3>
+    <h3><b>ENEL 300 Project: Honkly</b></h3>
 </div>
 <!-- Banner Image Should be Ratio 4:1 Width to Height -->
-<div class="w3-container blog-img-lg" style="text-align: center;">
-    <a href="img/scrum.jpg" target="_blank"><img src="img/scrum.jpg" alt="Signals"></a>
-    <p>A rugby team forming a scrum.</p>
+<div class="w3-container blog-img-lg" style="text-align: center; max-width: 600px;">
+    <a href="img/honkly-card.jpeg" target="_blank"><img src="img/honkly-card.jpeg" alt="Honkly"></a>
 </div>
 
 <div class="w3-container">
     <h5><span class="w3-opacity"> April 19, 2021</span></h5>
-    <h5>Large Projects Demand Teamwork!</h5>
-    <p>As someone who is more of an introvert, I found this semester really showed me the power of team work. Having a team of people who you can <i>really</i> rely on takes time to develop, but once you get it, it's much better than flying solo. Here are
-        some things I learned about teamwork in ENEL 300</p>
-    <h5><i class="fa fa-handshake-o" aria-hidden="true" style="margin-right: 20px;"></i><b>One Person Can't Do It All and Do It Well</b></h5>
+    <h5>A Year 2 "Capstone" Project</h5>
+    <p>The "Integrated Learning Stream" is a program for University of Calgary Electrical Engineering students in their second year. The best part of the program is that students work together in a small group (4 students) to produce a single large project
+        that incorporates knowledge from across all courses of the entire semester. The project my group chose was 'Honkly', a custom car horn.</p>
+    <h5><i class="fa fa-list-ol" aria-hidden="true" style="margin-right: 20px;"></i><b>Iterations</b></h5>
+    <p>One of the core philosophies of Agile project management is to have a potentially usable product with <i>each iteration.</i> This wasn't <i>entirely</i> possible with COVID and the lack of knowledge in the beginning of the semester, but by the end
+        of the term, we had a physical prototype! The hardest part of the entire process was committing to the features to implement for each Sprint. Here were some changes that happened with each iteration:
+        <ol>
+            <li>Operational Amplifier Used</li>
+            <ul>
+                <li>The operational amplifier that came with the ILS parts kit was not suitable to power the 8 ohm speaker we opted to use. This required researching a new, inexpensive operational amplifier.</li>
+                <li>We decided on the <a href="https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm386">LM386</a> due to its widely supported usage (it was really easy to find schematics
+                    and applications on the internet), and it's ability to take 12V input, produce up to 10V output, and provide enough current.</li>
+            </ul>
+            <li>Controller placement</li>
+            <ul>
+                <li>Originally, the controller was planned to be attached somehow to the steering wheel, so it could be easily accessed.</li>
+                <li>When we realized that it was pretty difficult to come up with a solution that would fit <i>all</i> steering wheels, we decided to find another way. After looking at some competitor products, we found that most other solutions don't provide
+                    specialized housing. We decided to follow this methodology, since it would allow users to place the control switches where it suited them best. Part of the "business plan" for this product (would it be real) would be to provide detailed
+                    installation instructions and a support team to help with particularly difficult installations.</li>
+                <li>My car was used for modeling. For our physical prototype, we managed to design and 3D print some custom housing that fit where my ash tray used to be:
+                    <div class="w3-container blog-img-sm" style="text-align: center;">
+                        <a href="img/ash-tray-housing.JPG" target="_blank"><img src="img/ash-tray-housing.JPG" alt="Ash Tray Housing"></a>
+                    </div>
+                </li>
+            </ul>
+            <li>Power</li>
+            <ul>
+                <li>Originally, it was planned that the power would come from the fuse box.</li>
+                <li>After committing to the 3D printed ash tray housing, we found that the DC lighter could be used with <a href="https://www.digikey.ca/en/products/detail/panduit-corp/DV18-250P-MY/448249?utm_adgroup=Connectors%2C%20Interconnects&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Supplier_Panduit%20Corp_0298_Co-op&utm_term=&productid=448249&gclid=Cj0KCQjw1PSDBhDbARIsAPeTqrdQysZf7d3UY-DmuEx-96nU9_Z87FknWMLDhX0IWTA4rzl_cRMZQU8aAjeNEALw_wcB">piggyback terminals</a>.
+                    This allowed the entire system to be switched on and off with as the keys turned on and off, <i>without going into the fuse box,</i> since the DC lighter was already connected to the accessory switch of the car.</li>
+            </ul>
+            <li>Sound Processing</li>
+            <ul>
+                <li>Orignally, the PIC controller provided in the ILS kit was going to be used in conjunction with an SD card to enable sound file selection and processing.</li>
+                <li>Due to how late this was taught in ENCM 369, our group decided to commit to a different solution. We were able to find a <a href="http://www.icstation.com/voice-playback-module-sound-module-music-player-voice-broadcast-device-development-board-arduino-p-6148.html">YS-M3</a>                    board that did exactly what we wanted for less than $10.00.</li>
+            </ul>
+        </ol>
+        <div class="w3-container" style="text-align: center;">
+            <p>Here is a quick demo of our "final" product:</p>
+            <p>
+                <iframe width="560 " height="315 " src="https://www.youtube.com/embed/2CCQ39ZPYQ0 " title="YouTube video player " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+            </p>
+        </div>
+    </p>
+    <h5><i class="fa fa-archive " aria-hidden="true " style="margin-right: 20px;"></i><b>My Biggest Takeaway</b></h5>
     <p>
         <ul>
-            <li><b>Delegate tasks.</b> With the workload of the ILS program in general, it would have been impossible to complete everything completely on my own and get good grades. The workload <i>demanded</i> that we work efficiently as a team. This required
-                dividing the work up and reviewing outstanding items on a regular basis, but it was still far more efficient than completing everything as one person.</li>
-            <li><b>Everyone on your team is better than you at something.</b> The sooner you can figure out what everyone's big skills are, the sooner you will be able to work efficiently as a team. In this particular group project, it turned out that my
-                strong suits were leading, coding, and building circuits. My not-so-strong suits were graphic design and video production, but it turned out that my group have members who were <i>fantastic</i> at that!</li>
-            <li><b>Leading is an art, not a science.</b> Being the oldest student of the group seemed to put me in a natural leadership position in this group. I was "stuck" as the leader, so I had to make it work. What I found was that learning people's
-                nuances really makes a difference. What works for one person, probably won't work for the other. For example, one member of the group produced really good work, but constantly forgot about deadlines. To make this person jive with the rest
-                of the group, they just needed some reminders. That's all it took! Another person was what seemed to be a bit of an "overachiever", who put way too much time into certain aspects of the work they were given. What helped this person was
-                regularly reviewing their progress. When the rest of the team saw their work and how good it was, they were encouraged to move on (and therefore work more efficiently).</li>
+            <li>For how complicated a "custom car horn" seems like it would be to build on the outside, it wasn't that difficult! It came down to breaking the problem down into manageable steps, and having a good team that could chomp away at the bits until
+                we had a working prototype. It was extremely rewarding to build something that worked in the end!</li>
         </ul>
     </p>
-    <h5><i class="fa fa-archive" aria-hidden="true" style="margin-right: 20px;"></i><b>Review What Works and What Doesn't</b></h5>
-    <p>Part of the Agile Scrum project management process was a "Retrospective", where we reviewed our work as a team after each Sprint. Some tools we used during this process were:
-        <ul>
-            <li><b>SWOT Analysis.</b> This stands for "Strengths", "Weaknesses", "Opportunities", and "Threats". During each retrospective, we thought about each of these items as a team and jotted them down into quadrants on a chart, similar to the one shown
-                below.
-                <div class="w3-container blog-img-sm" style="text-align: center;">
-                    <a href="img/swot.png" target="_blank"><img src="img/swot.png" alt="SWOT"></a>
-                    <p>A basic SWOT chart.</p>
-                </div>
-            </li>
-            <li><b>Develop A Strategic Plan.</b> This involved thinking critically about each of the components in the SWOT chart, and then using them to produce the best results. How can strengths be used to minimize weaknesses? What opportunities can be
-                taken advantage of to minimize threats? etc.</li>
-            <li><b>Use the plan you developed!</b> In the first Scrum, we didn't really use the strategic plan we developed, and ended up repeating the same mistakes. To bring this full circle, useful items found in the retrospective <i>should be incorporated into a user story</i>                so that the process becomes "implemented" as part of the regular Scrum process.</li>
-        </ul>
-    </p>
+
 </div>
 <!-- Copy End -->
 

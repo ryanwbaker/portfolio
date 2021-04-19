@@ -1,8 +1,16 @@
 const blogdata = [{
+        id: 8, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'ENEL 300 Project',
+        type: 'Project', //'Project' or 'Reflection'
+        date: 'April 19, 2021',
+        desc: 'Honkly: A Custom Car Horn!', // keep it less than 10 words
+        img: 'img/honkly-card.jpeg', //should be 4:3 ratio
+    },
+    {
         id: 7, //store HTML file as '[id#].html' in 'posts' folder
         title: 'ENEL 300 Team Work',
         type: 'Reflection', //'Project' or 'Reflection'
-        date: 'April 18, 2021',
+        date: 'April 19, 2021',
         desc: 'Teamwork is critical for large projects!', // keep it less than 10 words
         img: 'img/teamwork-card.png', //should be 4:3 ratio
     },
