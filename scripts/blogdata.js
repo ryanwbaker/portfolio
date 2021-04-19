@@ -1,4 +1,12 @@
 const blogdata = [{
+        id: 6, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'ENEL 300 Entrepreneurship',
+        type: 'Reflection', //'Project' or 'Reflection'
+        date: 'April 18, 2021',
+        desc: 'What I Learned About Entrepreneurship in ENEL 300', // keep it less than 10 words
+        img: 'img/entrepreneurship-card.jpg', //should be 4:3 ratio
+    },
+    {
         id: 5, //store HTML file as '[id#].html' in 'posts' folder
         title: 'Agile Project Management',
         type: 'Reflection', //'Project' or 'Reflection'
