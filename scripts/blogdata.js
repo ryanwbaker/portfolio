@@ -1,4 +1,12 @@
 const blogdata = [{
+        id: 10, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'Looking Back: Learning Strategies',
+        type: 'Reflection', //'Project' or 'Reflection'
+        date: 'April 19, 2021',
+        desc: "Learning how to learn is useful.", // keep it less than 10 words
+        img: 'img/learning-card.jpg', //should be 4:3 ratio
+    },
+    {
         id: 9, //store HTML file as '[id#].html' in 'posts' folder
         title: 'Looking Back: Study Plan',
         type: 'Reflection', //'Project' or 'Reflection'
