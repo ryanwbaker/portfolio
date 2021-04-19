@@ -1,4 +1,12 @@
 const blogdata = [{
+        id: 7, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'ENEL 300 Team Work',
+        type: 'Reflection', //'Project' or 'Reflection'
+        date: 'April 18, 2021',
+        desc: 'Teamwork is critical for large projects!', // keep it less than 10 words
+        img: 'img/teamwork-card.png', //should be 4:3 ratio
+    },
+    {
         id: 6, //store HTML file as '[id#].html' in 'posts' folder
         title: 'ENEL 300 Entrepreneurship',
         type: 'Reflection', //'Project' or 'Reflection'
