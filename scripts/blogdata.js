@@ -71,6 +71,14 @@ const blogdata = [{
         img: 'img/mips_card.jpg', //should be 4:3 ratio
     },
     {
+        id: 12, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'Chem 209 Battlebox',
+        type: 'Project', //'Project' or 'Reflection'
+        date: 'November 15, 2019',
+        desc: 'Escape Room Style Puzzle', // keep it less than 10 words
+        img: 'img/chem-209-battlebox.jpg', //should be 4:3 ratio
+    },
+    {
         id: 1, //store HTML file as '[id#].html' in 'posts' folder
         title: 'Saving Thanksgiving',
         type: 'Project', //'Project' or 'Reflection'
