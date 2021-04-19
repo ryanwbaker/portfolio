@@ -1,4 +1,12 @@
 const blogdata = [{
+        id: 9, //store HTML file as '[id#].html' in 'posts' folder
+        title: 'Looking Back: Study Plan',
+        type: 'Reflection', //'Project' or 'Reflection'
+        date: 'April 19, 2021',
+        desc: "It's simple and it works!", // keep it less than 10 words
+        img: 'img/study-plan.png', //should be 4:3 ratio
+    },
+    {
         id: 8, //store HTML file as '[id#].html' in 'posts' folder
         title: 'ENEL 300 Project',
         type: 'Project', //'Project' or 'Reflection'
