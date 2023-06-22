@@ -8,7 +8,7 @@
 
 <div class="w3-container">
     <h5><span class="w3-opacity">April 30, 2023</span></h5>
-    <p>This was an incredibly fun project that ended up becoming the capstone project for my degree and then spun into a startup company! You can track the latest news with Equusense on the <a href="https://www.equusense.ca">Equusense Homepage</a>.The best way to describe the project is a "smart watch for horses" that can monitor horse vitals, transmit the data to a website, and then display the data to users in a presentable format. My role in the project was "Software Lead", where I developed both the back-end and front-end portions of the website.  The website was responsible for storing the user data transmitted through a web API, and also displaying the user data in a web user interface.</p>
+    <p>This was an incredibly fun project that ended up becoming the capstone project for my degree and then spun into a startup company! You can track the latest news with Equusense on the <a href="https://www.equusense.ca" target="_blank">Equusense Homepage</a>.The best way to describe the project is a "smart watch for horses" that can monitor horse vitals, transmit the data to a website, and then display the data to users in a presentable format. My role in the project was "Software Lead", where I developed both the back-end and front-end portions of the website.  The website was responsible for storing the user data transmitted through a web API, and also displaying the user data in a web user interface.</p>
     <p>The project won several awards and was featured on the local news!</p>
     <p><img src="img/equusense-awards.png" alt="Equusense Awards"></p>
     <div class="w3-container" style="text-align: center;">
@@ -27,7 +27,7 @@
             <li>Flask User Interface</li>
             <ul>
                 <li>As the next part of the first prototype, we wanted to showcase what a simply user interface would look like. Given my experience with bootstrap and vanilla JavaScript, I was able to build a simple user interface.</li>
-                <li>I learned how to use plotly.js and in order to get some nice data visualizations, and deployed <a href="http://equusense-api.herokuapp.com/" target="blank">this to Heroku for free.</a> There were still a few problems with this implementation; namely, only a single user could use the system and there was no authentication (so anybody could view the data). Future iterations would need to include authentication and user based sessions.</li>
+                <li>I learned how to use plotly.js and in order to get some nice data visualizations, and deployed <a href="http://equusense-api.herokuapp.com/" target="_blank">this to Heroku for free.</a> There were still a few problems with this implementation; namely, only a single user could use the system and there was no authentication (so anybody could view the data). Future iterations would need to include authentication and user based sessions.</li>
             </ul>
             <li>Django Web API</li>
             <ul>
@@ -40,7 +40,7 @@
             <ul>
                 <li>The user interface didn't change all that much, other than a login screen and a horse selection screen (I build the data model such that each user could have multiple horses). This was all due to the face that the Django framework was able to handle token authentication, which kept the user interface lightweight.</li>
                 <li>To save on hosting costs and extra complexity, the user interface was created as a separate Django app within the master application, and then a simple HTML template was built for the Django template engine that could be served to users when they visited the webpage.</li>
-                <li>One feature I am particularly proud of is including the 'drf-spectacular' library in the back-end of the Django application. This created <a href="http://ec2-3-145-175-13.us-east-2.compute.amazonaws.com/api/docs/" target="blank">interactive API documentation that could be tested from a browser</a>, and allowed me to keep the user interface lightweight by making requests to the API only when necessary (instead of downloading a large amount of data at once, small amounts of data would be requested only when needed). This makes the user interface feel 'faster' and produced less lag when changing from screen to screen.</li>
+                <li>One feature I am particularly proud of is including the 'drf-spectacular' library in the back-end of the Django application. This created <a href="http://ec2-3-145-175-13.us-east-2.compute.amazonaws.com/api/docs/" target="_blank">interactive API documentation that could be tested from a browser</a>, and allowed me to keep the user interface lightweight by making requests to the API only when necessary (instead of downloading a large amount of data at once, small amounts of data would be requested only when needed). This makes the user interface feel 'faster' and produced less lag when changing from screen to screen.</li>
             </ul>
         </ol>
     </p>
