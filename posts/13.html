@@ -3,20 +3,47 @@
 </div>
 <!-- Banner Image Should be Ratio 4:1 Width to Height -->
 <div class="w3-container blog-img-lg" style="text-align: center; max-width: 600px;">
-    <a href="img/equusense-banner.png" target="_blank"><img src="img/equusense-banner.png" alt="Power Supply"></a>
+    <a href="img/equusense-banner.png" target="_blank"><img src="img/equusense-banner.png" alt="Equusense Banner"></a>
 </div>
 
 <div class="w3-container">
     <h5><span class="w3-opacity">April 30, 2023</span></h5>
-    <p>This was an incredibly fun project that ended up becoming the capstone project for my degree and then spun into a startup company! The best way to describe the project is a "smart watch for horses" that can monitor horse vitals, transmit the data to a website, and then display the data to users in a presentable format. My role in the project was "Software Lead", where I developed both the back-end and front-end portions of the website.  The website was responsible for storing the user data transmitted through a web API, and also displaying the user data in a web user interface.</p>
-    <p>The project won several awards!</p>
+    <p>This was an incredibly fun project that ended up becoming the capstone project for my degree and then spun into a startup company! You can track the latest news with Equusense on the <a href="https://www.equusense.ca">Equusense Homepage</a>.The best way to describe the project is a "smart watch for horses" that can monitor horse vitals, transmit the data to a website, and then display the data to users in a presentable format. My role in the project was "Software Lead", where I developed both the back-end and front-end portions of the website.  The website was responsible for storing the user data transmitted through a web API, and also displaying the user data in a web user interface.</p>
+    <p>The project won several awards and was featured on the local news!</p>
     <p><img src="img/equusense-awards.png" alt="Equusense Awards"></p>
     <div class="w3-container" style="text-align: center;">
         <p>
             <iframe style="width: 100%; aspect-ratio: 4/3;" src="https://www.youtube.com/embed/bXfsar3pFfs" title="Equusense on the News!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
         </p>
     </div>
-
+    <h5><i class="fa fa-list-ol" aria-hidden="true" style="margin-right: 20px;"></i><b>Iterations</b></h5>
+    <p>
+        <ol>
+            <li>Flask Web API</li>
+            <ul>
+                <li>The first iteration was built using the python Flask framework, as it was a framework myself and Nathalie (another team member) were both familiar with it from another class (ENSF 311 - Advanced Software Design and Development).</li>
+                <li>Working with Peter (hardware lead), we were able to get the Arduino Teensy (hardware with WiFi module) to successfully communicate with the API over a local network.</li>
+            </ul>
+            <li>Flask User Interface</li>
+            <ul>
+                <li>As the next part of the first prototype, we wanted to showcase what a simply user interface would look like. Given my experience with bootstrap and vanilla JavaScript, I was able to build a simple user interface.</li>
+                <li>I learned how to use plotly.js and in order to get some nice data visualizations, and deployed <a href="http://equusense-api.herokuapp.com/">this to Heroku for free.</a> There were still a few problems with this implementation; namely, only a single user could use the system and there was no authentication (so anybody could view the data). Future iterations would need to include authentication and user based sessions.</li>
+            </ul>
+            <li>Django Web API</li>
+            <ul>
+                <li>To solve the key problems outlined in the first iteration of the web API and discussing with the rest of the team, we decided that it would be worthwhile to learn and shift to the Python Django framework. Reasons for this change included better framework documentation, more "out of the box" features (including authentication and user based sessions), and better code standardization.</li>
+                <li>Django didn't come with web API functionality out of the box, but an additional framwork called "Django REST Framework" is exactly what we needed to be able to add REST API functionality to Django.</li>
+                <li>We were also unhappy with relying on a Heroku 'dyno' to host our python based application, we wanted to be able to host our app anywhere and not have to rely on any one hosting provider. For this reason, we decided to use Docker. Docker allowed us to put the database, application, and add in a proxy server (all in separate 'containers') that could be deployed on any Windows, Linux, or Mac server.</li>
+                <li>As this project was now substantially bigger than the first prototype, I decided to implement Test Driven Development; that is first writing a unit test for each new feature implemented, then writing code that passes the test. In the beginning, this proved to be very daunting (as I was still learning Django, Django REST framework, and now the Django testing suite built into Django), it proved to be extremely useful in later stages of the project. By the time this version of the prototype was complete, I had over 40 tests that I could run with a single command. This made me very confident in my code with each small change made or new feature implemented.</li>
+            </ul>
+            <li>Django User Interface</li>
+            <ul>
+                <li>The user interface didn't change all that much, other than a login screen and a horse selection screen (I build the data model such that each user could have multiple horses). This was all due to the face that the Django framework was able to handle token authentication, which kept the user interface lightweight.</li>
+                <li>To save on hosting costs and extra complexity, the user interface was created as a separate Django app within the master application, and then a simple HTML template was built for the Django template engine that could be served to users when they visited the webpage.</li>
+                <li>One feature I am particularly proud of is including the 'drf-spectacular' library in the back-end of the Django application. This created <a href="http://ec2-3-145-175-13.us-east-2.compute.amazonaws.com/api/docs/">interactive API documentation that could be tested from a browser</a>, and allowed me to keep the user interface lightweight by making requests to the API only when necessary (instead of downloading a large amount of data at once, small amounts of data would be requested only when needed). This makes the user interface feel 'faster' and produced less lag when changing from screen to screen.</li>
+            </ul>
+        </ol>
+    </p>
     <h5><i class="fa fa-archive" aria-hidden="true" style="margin-right: 20px;"></i><b>My Biggest Takeaways</b></h5>
     <p>
         <ul>
