@@ -4,7 +4,7 @@ var blogdata = [
     title: "My First React Project",
     type: "Project", //'Project' or 'Reflection'
     date: "2023-05-30",
-    desc: "A Simple Profile Card", // keep it less than 10 words
+    desc: "A simple profile card", // keep it less than 10 words
     img: "img/react-1-logo-png-transparent.png", //should be 4:3 ratio
   },
   {
